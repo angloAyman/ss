@@ -84,36 +84,32 @@ class UserDataTableSource extends DataGridSource {
 
 
 
-  UserDataTableSource(List<User> users) {
-    this.users = users;
-    filteredUsers.addAll(users); // Initialize filteredUsers with all users
-    buildDataGridRows();
-  }
-
-
-  // UserDataTableSource(Box<User> userBox) {
-  //   users = userBox.values.toList();
+  // UserDataTableSource(List<User> users) {
+  //   this.users = users;
   //   filteredUsers.addAll(users); // Initialize filteredUsers with all users
   //   buildDataGridRows();
   // }
 
+
+   UserDataTableSource(Box<User> userBox) {
+     users = userBox.values.toList();
+     filteredUsers.addAll(users); // Initialize filteredUsers with all users
+     buildDataGridRows();
+   }
+
   void buildDataGridRows() {
     dataGridRows = filteredUsers.map<DataGridRow>((user) {
-      return DataGridRow(cells: [
+      return
+        DataGridRow(cells: [
         DataGridCell<String>(columnName: 'id', value: user.id),
-        DataGridCell<String>(
-            columnName: 'citizensName', value: user.citizensName),
-        DataGridCell<String>(
-            columnName: 'phoneNumber', value: user.phoneNumber),
-        DataGridCell<String>(
-            columnName: 'passportNumber', value: user.passportNumber),
-        DataGridCell<String>(
-            columnName: 'nationality', value: user.nationality),
+        DataGridCell<String>(columnName: 'citizensName', value: user.citizensName),
+        DataGridCell<String>(columnName: 'phoneNumber', value: user.phoneNumber),
+        DataGridCell<String>(columnName: 'passportNumber', value: user.passportNumber),
+        DataGridCell<String>(columnName: 'nationality', value: user.nationality),
         DataGridCell<String>(columnName: 'genre', value: user.genre),
         DataGridCell<String>(columnName: 'age', value: user.age),
         DataGridCell<String>(columnName: 'education', value: user.education),
-        DataGridCell<String>(
-            columnName: 'maritalStatus', value: user.maritalStatus),
+        DataGridCell<String>(columnName: 'maritalStatus', value: user.maritalStatus),
         DataGridCell<String>(columnName: 'address', value: user.address),
         DataGridCell<String>(columnName: 'notes', value: user.notes),
       ]);
@@ -146,7 +142,6 @@ class UserDataTableSource extends DataGridSource {
           user.address.toLowerCase().contains(address.toLowerCase()) &&
           user.notes.toLowerCase().contains(notes.toLowerCase());
     }).toList();
-
     buildDataGridRows();
     notifyListeners();
   }
@@ -167,7 +162,7 @@ class UserDataTableSource extends DataGridSource {
 
   // void updateDataSource(List<User> newUsers) {
   //   users = newUsers;
-  //   filter(); // Reapply the filter on the updated dataset
+  //   filter(newUsers); // Reapply the filter on the updated dataset
   //   notifyListeners();
   // }
 }

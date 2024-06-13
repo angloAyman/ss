@@ -1215,23 +1215,7 @@
 // }
 
 
-// import 'dart:async';
-// import 'dart:convert';
-// import 'dart:io';
-// import 'package:flutter/material.dart';
-// import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:flutter/services.dart';
-// import 'package:hive/hive.dart';
-// import 'package:path_provider/path_provider.dart';
-// import 'package:ss/Api/UserAdapter.dart';
-// import 'package:ss/Api/user_data_table_source.dart';
-// import 'package:ss/model/user.dart';
-// import 'package:ss/widget/add_data_dialog.dart';
-// import 'package:ss/widget/search_dialog.dart';
-//
-//
-// import 'Api/data_provider.dart';
-//
+
 // Future<void> main() async {
 //   // WidgetsFlutterBinding.ensureInitialized();
 //   // //await Hive.initFlutter();
@@ -1480,6 +1464,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
@@ -1497,8 +1482,25 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(UserAdapter());
   await Hive.openBox<User>('userBox');
+  await loadJsonDataIntoHive();
+  // if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+  //
+  // }
+
+  // await Hive.openBox<User>('userBox');
 
   runApp(ProviderScope(child: MyApp()));
+}
+Future<void> loadJsonDataIntoHive() async {
+  final box = Hive.box<User>('userBox');
+  if (box.isEmpty) {
+    final String response = await rootBundle.loadString('assets/data.json');
+    final List<dynamic> data = json.decode(response);
+    for (var userJson in data) {
+      final user = User.fromJson(userJson);
+      box.add(user);
+    }
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -1542,10 +1544,8 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
   void initState() {
     super.initState();
     _userBox = Hive.box<User>('userBox');
-    Hive.initFlutter().then((_) async {
+     Hive.initFlutter().then((_) async {
       Hive.registerAdapter(UserAdapter());
-      _userBox = await Hive.openBox<User>('userBox');
-     // _data = UserDataTableSource(_userBox.values.toList());
       setState(() {});
     });
 
@@ -1569,23 +1569,7 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
 
   }
 
-  void _filterData() {
-    setState(() {
-      _data.filter(
-        idController.text,
-        citizensNameController.text,
-        phoneNumberController.text,
-        passportNumberController.text,
-        nationalityController.text,
-        genreController.text,
-        ageController.text,
-        educationController.text,
-        maritalStatusController.text,
-        addressController.text,
-        notesController.text,
-      );
-    });
-  }
+
 
 
 
@@ -1615,6 +1599,28 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
     );
   }
 
+  Future<void> _filterData() async {
+    setState(() {
+      _data.filter(
+        idController.text,
+        citizensNameController.text,
+        phoneNumberController.text,
+        passportNumberController.text,
+        nationalityController.text,
+        genreController.text,
+        ageController.text,
+        educationController.text,
+        maritalStatusController.text,
+        addressController.text,
+        notesController.text,
+      );
+    });
+
+
+    _clearControllers();
+    _refreshData();
+  }
+
   void _openAddDataDialog() {
     showDialog(
       context: context,
@@ -1637,8 +1643,6 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
       },
     );
   }
-
-
 
   Future<void> _addData() async {
     // Check if any text controller is empty and replace it with "no data"
@@ -1819,7 +1823,6 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
                   source: UserDataSource(users),
                   allowFiltering: true,
                   columns:getColumns(),
-                  selectionMode: SelectionMode.single,
                   onSelectionChanged: (List<DataGridRow> addedRows, List<DataGridRow> removedRows) {
                     if (addedRows.isNotEmpty) {
                       setState(() {
@@ -1827,6 +1830,7 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
                       });
                     }
                   },
+                  selectionMode: SelectionMode.multiple,
                 ),
               ),
               if (_selectedUser != null)

@@ -1,1 +1,40 @@
-[{"id":"66","citizensName":"no data","phoneNumber":"no data","passportNumber":"no data","nationality":"no data","genre":"no data","age":"no data","education":"no data","maritalStatus":"no data","address":"no data","notes":"no data"},{"id":"2","citizensName":"no data","phoneNumber":"no data","passportNumber":"no data","nationality":"no data","genre":"no data","age":"no data","education":"no data","maritalStatus":"no data","address":"no data","notes":"no data"},{"id":"1","citizensName":"no data","phoneNumber":"no data","passportNumber":"no data","nationality":"no data","genre":"no data","age":"no data","education":"no data","maritalStatus":"no data","address":"no data","notes":"no data"}]
+[
+  {
+    "id": "1",
+    "CitizensName": "يقين سامي كمال ",
+    "PhoneNumber": "01125672874",
+    "PassportNumber": "P07693965",
+    "Nationality": "",
+    "genre": "أنثي",
+    "Age": "5",
+    "education": "",
+    "MaritalStatus": "",
+    "address": "أسوان كركربيت167غرب السكة",
+    "notes": "البيانات من جمعيه كيرتاس مصر"
+  },
+  {
+    "id": "2",
+    "CitizensName": "كمال سامي كمال ",
+    "PhoneNumber": "01125672874",
+    "PassportNumber": "p07693880",
+    "Nationality": "",
+    "genre": "ذكر",
+    "Age": "7",
+    "education": "",
+    "MaritalStatus": "",
+    "address": "أسوان كركربيت167غرب السكة",
+    "notes": "البيانات من جمعيه كيرتاس مصر"
+  },
+  {
+    "id": "3",
+    "CitizensName": "فايزة طلال محمد ",
+    "PhoneNumber": "01147530291",
+    "PassportNumber": "p05959504",
+    "Nationality": "",
+    "genre": "أنثي",
+    "Age": "10",
+    "education": "",
+    "MaritalStatus": "",
+    "address": "أسوان الحكروب بجوار جامع فاطمة الزهراء",
+    "notes": "البيانات من جمعيه كيرتاس مصر"
+  }]

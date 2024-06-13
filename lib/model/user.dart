@@ -4,27 +4,27 @@ import 'package:hive/hive.dart';
 @HiveType(typeId: 0)
 class User extends HiveObject {
   @HiveField(0)
-  late final String id;
+  late String id;
   @HiveField(1)
-  late final String citizensName;
+  late  String citizensName;
   @HiveField(2)
-  late final String phoneNumber;
+  late String phoneNumber;
   @HiveField(3)
-  late final String passportNumber;
+  late  String passportNumber;
   @HiveField(4)
-  late final String nationality;
+  late String nationality;
   @HiveField(5)
-  late final String genre;
+  late String genre;
   @HiveField(6)
-  late final String age;
+  late String age;
   @HiveField(7)
-  late final String education;
+  late String education;
   @HiveField(8)
-  late final String maritalStatus;
+  late String maritalStatus;
   @HiveField(9)
-  late final String address;
+  late String address;
   @HiveField(10)
-  late final String notes;
+  late String notes;
 
   bool isSelected; // Add isSelected property
 
