@@ -58,10 +58,11 @@ import 'package:ss/model/user.dart';
 // }
 
 class UserDataTableSource extends DataGridSource {
-  List<User> users = [];
-  List<DataGridRow> dataGridRows = [];
-  List<User> filteredUsers = [];
+  // List<DataGridRow> dataGridRows = [];
   List<DataGridRow> _usersDataGridRows = [];
+
+  List<User> users = [];
+  List<User> filteredUsers = [];
 
 
   UserDataSource(List<User> users) {
@@ -82,6 +83,9 @@ class UserDataTableSource extends DataGridSource {
     }).toList();
   }
 
+  @override
+  List<DataGridRow> get rows => _usersDataGridRows;
+
 
 
   // UserDataTableSource(List<User> users) {
@@ -98,7 +102,7 @@ class UserDataTableSource extends DataGridSource {
    }
 
   void buildDataGridRows() {
-    dataGridRows = filteredUsers.map<DataGridRow>((user) {
+    _usersDataGridRows = filteredUsers.map<DataGridRow>((user) {
       return
         DataGridRow(cells: [
         DataGridCell<String>(columnName: 'id', value: user.id),
@@ -145,9 +149,6 @@ class UserDataTableSource extends DataGridSource {
     buildDataGridRows();
     notifyListeners();
   }
-
-  @override
-  List<DataGridRow> get rows => _usersDataGridRows;
 
   @override
   DataGridRowAdapter buildRow(DataGridRow row) {

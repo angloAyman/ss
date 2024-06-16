@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+
 // part 'user.g.dart';
 
 @HiveType(typeId: 0)
@@ -26,7 +27,6 @@ class User extends HiveObject {
   @HiveField(10)
   late String notes;
 
-  bool isSelected; // Add isSelected property
 
 // class User {
 //   final String id;
@@ -53,25 +53,22 @@ class User extends HiveObject {
     required this.maritalStatus,
     required this.address,
     required this.notes,
-    this.isSelected = false, // Initialize isSelected to false
 
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      id: json['id'],
-      citizensName: json['citizensName'],
-      phoneNumber: json['phoneNumber'],
-      passportNumber: json['passportNumber'],
-      nationality: json['nationality'],
-      genre: json['genre'],
-      age: json['age'],
-      education: json['education'],
-      maritalStatus: json['maritalStatus'],
-      address: json['address'],
-      notes: json['notes'],
-      // isSelected:json['isSelected'],
-
+      id: json['id'] as String? ?? "لم يتم ادخال بيانات",
+      citizensName: json['CitizensName'] as String? ?? 'لم يتم ادخال بيانات',
+      phoneNumber: json['phoneNumber'] as String? ?? 'لم يتم ادخال بيانات',
+      passportNumber: json['passportNumber'] as String? ?? 'لم يتم ادخال بيانات',
+      nationality: json['nationality'] as String? ?? 'لم يتم ادخال بيانات',
+      genre: json['genre'] as String? ?? 'لم يتم ادخال بيانات',
+      age: json['age'] as String? ?? 'لم يتم ادخال بيانات',
+      education: json['education'] as String? ?? 'لم يتم ادخال بيانات',
+      maritalStatus: json['maritalStatus'] as String? ?? 'لم يتم ادخال بيانات',
+      address: json['address'] as String? ?? 'لم يتم ادخال بيانات',
+      notes: json['notes'] as String? ?? 'لم يتم ادخال بيانات',
     );
   }
 
@@ -88,7 +85,6 @@ class User extends HiveObject {
       'maritalStatus': maritalStatus,
       'address': address,
       'notes': notes,
-      // 'isSelected':isSelected,
     };
   }
 }
