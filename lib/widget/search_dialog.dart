@@ -1,3 +1,90 @@
+// import 'package:flutter/material.dart';
+//
+// class SearchDialog extends StatefulWidget {
+//   final Function(String, String, String, String, String, String, String, String, String, String, String) onFilter;
+//
+//   SearchDialog({required this.onFilter});
+//
+//   @override
+//   _SearchDialogState createState() => _SearchDialogState();
+// }
+//
+// class _SearchDialogState extends State<SearchDialog> {
+//   final _idController = TextEditingController();
+//   final _citizensNameController = TextEditingController();
+//   final _phoneNumberController = TextEditingController();
+//   final _passportNumberController = TextEditingController();
+//   final _nationalityController = TextEditingController();
+//   final _genreController = TextEditingController();
+//   final _ageController = TextEditingController();
+//   final _educationController = TextEditingController();
+//   final _maritalStatusController = TextEditingController();
+//   final _addressController = TextEditingController();
+//   final _notesController = TextEditingController();
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return AlertDialog(
+//       title: Text('Search'),
+//       content: SingleChildScrollView(
+//         child: Column(
+//           children: [
+//             _buildTextField('ID', _idController),
+//             _buildTextField('Citizens Name', _citizensNameController),
+//             _buildTextField('Phone Number', _phoneNumberController),
+//             _buildTextField('Passport Number', _passportNumberController),
+//             _buildTextField('Nationality', _nationalityController),
+//             _buildTextField('Genre', _genreController),
+//             _buildTextField('Age', _ageController),
+//             _buildTextField('Education', _educationController),
+//             _buildTextField('Marital Status', _maritalStatusController),
+//             _buildTextField('Address', _addressController),
+//             _buildTextField('Notes', _notesController),
+//           ],
+//         ),
+//       ),
+//       actions: [
+//         TextButton(
+//           onPressed: () {
+//             widget.onFilter(
+//               _idController.text,
+//               _citizensNameController.text,
+//               _phoneNumberController.text,
+//               _passportNumberController.text,
+//               _nationalityController.text,
+//               _genreController.text,
+//               _ageController.text,
+//               _educationController.text,
+//               _maritalStatusController.text,
+//               _addressController.text,
+//               _notesController.text,
+//             );
+//             Navigator.of(context).pop();
+//           },
+//           child: Text('Filter'),
+//         ),
+//       ],
+//     );
+//   }
+//
+//   Widget _buildTextField(String label, TextEditingController controller) {
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(vertical: 4.0),
+//       child: TextField(
+//         controller: controller,
+//         decoration: InputDecoration(
+//           labelText: label,
+//           border: OutlineInputBorder(),
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
+//
+
+
+
 import 'package:flutter/material.dart';
 
 class SearchDialog extends StatelessWidget {

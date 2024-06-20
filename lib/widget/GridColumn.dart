@@ -16,8 +16,8 @@ List<GridColumn> getColumns() {
     GridColumn(
       columnName: 'citizensName',
       label: Container(
-        padding: EdgeInsets.all(8.0),
-        alignment: Alignment.centerLeft,
+        padding: EdgeInsets.all(80),
+        alignment: Alignment.center,
         child: Text('اسم المواطن'),
       ),
     ),

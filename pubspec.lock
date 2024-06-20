@@ -17,6 +17,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.13.0"
+  arabic_font:
+    dependency: "direct main"
+    description:
+      name: arabic_font
+      sha256: cfdf74e27f7c9f6228592c658344b24493f9b505920d9faf4d0a9c118552e61f
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.9"
+  archive:
+    dependency: transitive
+    description:
+      name: archive
+      sha256: cb6a278ef2dbb298455e1a713bda08524a175630ec643a242c399c932a0a1f7d
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.6.1"
   args:
     dependency: transitive
     description:
@@ -33,6 +49,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  barcode:
+    dependency: transitive
+    description:
+      name: barcode
+      sha256: ab180ce22c6555d77d45f0178a523669db67f95856e3378259ef2ffeb43e6003
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.8"
+  bidi:
+    dependency: transitive
+    description:
+      name: bidi
+      sha256: "1a7d0c696324b2089f72e7671fd1f1f64fef44c980f3cebc84e803967c597b63"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.10"
   boolean_selector:
     dependency: transitive
     description:
@@ -325,6 +357,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      sha256: "761a297c042deedc1ffbb156d6e2af13886bb305c2a343a4d972504cd67dd938"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.1"
   http_multi_server:
     dependency: transitive
     description:
@@ -341,6 +381,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  image:
+    dependency: transitive
+    description:
+      name: image
+      sha256: "2237616a36c0d69aef7549ab439b833fb7f9fb9fc861af2cc9ac3eedddd69ca8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.0"
   intl:
     dependency: transitive
     description:
@@ -357,6 +405,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+  jiffy:
+    dependency: transitive
+    description:
+      name: jiffy
+      sha256: "3497caaa36d36a29033e66803c9739ce6bccbc7e241ca46070f76ee9e6f6eb0c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.3.1"
   js:
     dependency: transitive
     description:
@@ -453,6 +509,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  open_file:
+    dependency: "direct main"
+    description:
+      name: open_file
+      sha256: a5a32d44acb7c899987d0999e1e3cbb0a0f1adebbf41ac813ec6d2d8faa0af20
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.3.2"
   package_config:
     dependency: transitive
     description:
@@ -469,6 +533,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+  path_parsing:
+    dependency: transitive
+    description:
+      name: path_parsing
+      sha256: e3e67b1629e6f7e8100b367d3db6ba6af4b1f0bb80f64db18ef1fbabd2fa9ccf
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   path_provider:
     dependency: "direct main"
     description:
@@ -517,6 +589,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.1"
+  pdf:
+    dependency: "direct main"
+    description:
+      name: pdf
+      sha256: "243f05342fc0bdf140eba5b069398985cdbdd3dbb1d776cf43d5ea29cc570ba6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.10.8"
+  pdf_widget_wrapper:
+    dependency: transitive
+    description:
+      name: pdf_widget_wrapper
+      sha256: c930860d987213a3d58c7ec3b7ecf8085c3897f773e8dc23da9cae60a5d6d0f5
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.4"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      sha256: c15605cd28af66339f8eb6fbe0e541bfe2d1b72d5825efc6598f3e0a31b9ad27
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.2"
   platform:
     dependency: transitive
     description:
@@ -541,6 +637,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.1"
+  printing:
+    dependency: "direct main"
+    description:
+      name: printing
+      sha256: "1c99cab90ebcc1fff65831d264627d5b529359d563e53f33ab9b8117f2d280bc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.12.0"
   pub_semver:
     dependency: transitive
     description:
@@ -557,6 +661,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.0"
+  qr:
+    dependency: transitive
+    description:
+      name: qr
+      sha256: "64957a3930367bf97cc211a5af99551d630f2f4625e38af10edd6b19131b64b3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   riverpod:
     dependency: transitive
     description:
@@ -722,6 +834,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "26.1.35"
+  syncfusion_flutter_datagrid_export:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_datagrid_export
+      sha256: "586df29ebbfcd632d8a0fdf5a0ea6a1d2a9ab9f7ebc2b2eb2c63aaf3a2a12fc5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "26.1.35"
+  syncfusion_flutter_pdf:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_pdf
+      sha256: b58b8e22702fb41ce78671e4d0c55871b78101af62f19229588538f9863d1d10
+      url: "https://pub.dev"
+    source: hosted
+    version: "26.1.35"
+  syncfusion_flutter_xlsio:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_xlsio
+      sha256: "6480cdcf3d638f69749dcc96be269198a9880f26abc8b22db8659aff4e24c3b2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "26.1.35"
+  syncfusion_officecore:
+    dependency: transitive
+    description:
+      name: syncfusion_officecore
+      sha256: "84712137dac7c31c9baf687f4f490158b813100ae55246d94f5d5b7ec48f77f6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "26.1.35"
   term_glyph:
     dependency: transitive
     description:
@@ -818,6 +962,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      sha256: b015a8ad1c488f66851d762d3090a21c600e479dc75e68328c52774040cf9226
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.5.0"
   yaml:
     dependency: transitive
     description:

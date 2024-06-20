@@ -59,7 +59,7 @@ class User extends HiveObject {
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       id: json['id'] as String? ?? "لم يتم ادخال بيانات",
-      citizensName: json['CitizensName'] as String? ?? 'لم يتم ادخال بيانات',
+      citizensName: json['citizensName'] as String? ?? 'لم يتم ادخال بيانات',
       phoneNumber: json['phoneNumber'] as String? ?? 'لم يتم ادخال بيانات',
       passportNumber: json['passportNumber'] as String? ?? 'لم يتم ادخال بيانات',
       nationality: json['nationality'] as String? ?? 'لم يتم ادخال بيانات',
